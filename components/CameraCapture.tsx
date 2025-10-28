@@ -9,6 +9,30 @@ type CameraCaptureProps = {
 
 const MAX_DIMENSION = 1600;
 const JPEG_QUALITY = 0.8;
+const FALLBACK_JPEG_QUALITY = 0.7;
+const MAX_UPLOAD_BYTES = 4 * 1024 * 1024;
+
+async function canvasToJpeg(
+  canvas: HTMLCanvasElement,
+  quality: number
+): Promise<Blob> {
+  const blob = await new Promise<Blob | null>((resolve) =>
+    canvas.toBlob((value) => resolve(value), 'image/jpeg', quality)
+  );
+  if (!blob) {
+    throw new Error('No se pudo comprimir la imagen.');
+  }
+  return blob;
+}
+
+function blobToDataUrl(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(new Error('No se pudo generar la vista previa.'));
+    reader.readAsDataURL(blob);
+  });
+}
 
 async function resizeFile(file: File): Promise<{ file: File; dataUrl: string }> {
   const arrayBuffer = await file.arrayBuffer();
@@ -36,17 +60,21 @@ async function resizeFile(file: File): Promise<{ file: File; dataUrl: string }> 
     throw new Error('No se pudo preparar el lienzo.');
   }
   ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
-  const blobResult = await new Promise<Blob | null>((resolve) =>
-    canvas.toBlob((value) => resolve(value), 'image/jpeg', JPEG_QUALITY)
-  );
-  if (!blobResult) {
-    throw new Error('No se pudo comprimir la imagen.');
+  let blobResult = await canvasToJpeg(canvas, JPEG_QUALITY);
+  if (blobResult.size > MAX_UPLOAD_BYTES) {
+    const fallbackBlob = await canvasToJpeg(canvas, FALLBACK_JPEG_QUALITY);
+    if (fallbackBlob.size < blobResult.size) {
+      blobResult = fallbackBlob;
+    }
+    if (blobResult.size > MAX_UPLOAD_BYTES) {
+      throw new Error('La imagen procesada supera 4MB. Usa una foto con menos resolución.');
+    }
   }
   const resizedFile = new File([blobResult], file.name.replace(/\.[^.]+$/, '') + '.jpg', {
     type: 'image/jpeg',
     lastModified: Date.now(),
   });
-  const dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
+  const dataUrl = await blobToDataUrl(blobResult);
   URL.revokeObjectURL(imageUrl);
   return { file: resizedFile, dataUrl };
 }

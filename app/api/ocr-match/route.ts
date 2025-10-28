@@ -1,8 +1,9 @@
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from 'next/server';
 import { extractTextFromImage } from '@/lib/vision';
 import { matchSku } from '@/lib/match';
-
-export const runtime = 'nodejs';
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 

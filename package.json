@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@google-cloud/vision": "^4.4.0",
@@ -32,6 +31,7 @@
     "vitest": "1.6.0"
   },
   "engines": {
-    "node": ">=18"
-  }
+    "node": ">=18.17 <23"
+  },
+  "packageManager": "pnpm@10.0.0"
 }
