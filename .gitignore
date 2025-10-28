@@ -1,0 +1,26 @@
+# Node / Next
+/node_modules
+/.next
+/.turbo
+/dist
+/.DS_Store
+npm-debug.log
+pnpm-debug.log
+.yarn/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Evitar binarios en PR
+public/icons/
+public/*.png
+public/*.webp
+public/*.ico
+*.png
+*.webp
+*.ico
