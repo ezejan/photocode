@@ -1,0 +1,9 @@
+{
+  "name": "PhotoCode",
+  "short_name": "PhotoCode",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111827",
+  "description": "PWA para identificar códigos SKU desde fotos (OCR coreano + matching)."
+}

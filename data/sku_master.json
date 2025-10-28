@@ -1,0 +1,100 @@
+[
+  {
+    "code": "OKFSZGRA",
+    "brand_line": "OKF Sparkling Zero Line 350ml",
+    "flavor": "Grape",
+    "units_per_box": "20",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "OKFSZPEA",
+    "brand_line": "OKF Sparkling Zero Line 350ml",
+    "flavor": "Peach",
+    "units_per_box": "20",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "OKFSZYUZ",
+    "brand_line": "OKF Sparkling Zero Line 350ml",
+    "flavor": "Yuzu",
+    "units_per_box": "20",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "OKFSZLIM",
+    "brand_line": "OKF Sparkling Zero Line 350ml",
+    "flavor": "Lime",
+    "units_per_box": "20",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "OKFSMUSC",
+    "brand_line": "OKF Sparkling Zero Line 350ml",
+    "flavor": "Shine Muscat",
+    "units_per_box": "20",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "HERSHBAR",
+    "brand_line": "HERSHEY'S Regular Bar",
+    "flavor": "Milk Chocolate",
+    "units_per_box": "36",
+    "shelf_life": "18m"
+  },
+  {
+    "code": "LOWHEKIC",
+    "brand_line": "HERSHEY'S Kisses Share Pack 146g",
+    "flavor": "Cookies & Cream",
+    "units_per_box": "24",
+    "shelf_life": "18m"
+  },
+  {
+    "code": "STAPPRBC",
+    "brand_line": "Starbucks Bottled Coffee 275ml",
+    "flavor": "Pike Place Roast",
+    "units_per_box": "12",
+    "shelf_life": "9m"
+  },
+  {
+    "code": "STAPPRSB",
+    "brand_line": "Starbucks Bottled Coffee 275ml",
+    "flavor": "Pike Place Sweetened",
+    "units_per_box": "12",
+    "shelf_life": "9m"
+  },
+  {
+    "code": "STACCLMO",
+    "brand_line": "Starbucks Chilled Cup 200ml",
+    "flavor": "Caffe Latte",
+    "units_per_box": "12",
+    "shelf_life": "6m"
+  },
+  {
+    "code": "STACCMOC",
+    "brand_line": "Starbucks Chilled Cup 200ml",
+    "flavor": "Mocha",
+    "units_per_box": "12",
+    "shelf_life": "6m"
+  },
+  {
+    "code": "LOTTECMLK",
+    "brand_line": "LOTTE Milkis Carbonated Soft Drink 250ml",
+    "flavor": "Original Milk",
+    "units_per_box": "30",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "LOTTEGRPE",
+    "brand_line": "LOTTE Milkis Carbonated Soft Drink 250ml",
+    "flavor": "Grape",
+    "units_per_box": "30",
+    "shelf_life": "12m"
+  },
+  {
+    "code": "OKFBRCFE",
+    "brand_line": "OKF Barista Coffee 500ml",
+    "flavor": "Americano",
+    "units_per_box": "12",
+    "shelf_life": "9m"
+  }
+]
