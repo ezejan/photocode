@@ -1,7 +1,6 @@
 {
   "name": "photocode",
   "private": true,
-  "packageManager": "pnpm@9.12.3",
   "engines": {
     "node": ">=18.17 <23"
   },
