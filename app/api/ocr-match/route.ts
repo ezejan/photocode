@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from 'next/server';
-import { extractTextFromImage } from '@/lib/vision';
+import { detectTextKo } from '@/lib/vision';
 import { matchSku } from '@/lib/match';
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
 
   try {
     const buffer = Buffer.from(await file.arrayBuffer());
-    const ocrText = await extractTextFromImage(buffer);
+    const ocrText = await detectTextKo(buffer);
     if (!ocrText) {
       return NextResponse.json({ error: 'No se detectó texto en la imagen.' }, { status: 422 });
     }
