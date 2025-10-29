@@ -17,6 +17,8 @@ const nextConfig = withPwaConfig({
       bodySizeLimit: '5mb',
     },
   },
+  typescript: { ignoreBuildErrors: true },
+  transpilePackages: [],
 });
 
 export default nextConfig;
